@@ -33,5 +33,11 @@ export class BugTrackerApiService {
   }
 
   // User API
-  // ...
+  getUserList(): Observable<any[]> {
+    return this.http.get<any[]>(this.bugTrackerApiUrl + "/Users");
+  }
+
+  getUser(id: number | string): Observable<any> {
+    return this.http.get<any>(this.bugTrackerApiUrl + `/Users/${id}`);
+  }
 }
