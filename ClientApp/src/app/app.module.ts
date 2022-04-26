@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectsComponent } from './dashboard/projects/projects.component';
 import { BugTrackerApiService } from './bugtrackerapi.service';
+import { AddEditProjectComponent } from './dashboard/projects/add-edit-project/add-edit-project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    AddEditProjectComponent
   ],
   imports: [
     BrowserModule,

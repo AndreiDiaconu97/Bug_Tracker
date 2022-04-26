@@ -1,0 +1,20 @@
+<form>
+  <div class="mb-3">
+    <label for="userId" class="form-label">Owner</label>
+    <input type="text" class="form-control" name="userId" [(ngModel)]="userId" *ngIf="project.id!=0" disabled>
+    <option *ngFor="let user of userList$|async" value=""></option>
+    <select class="form-control" id="userId" name="userId" [(ngModel)]="userId" *ngIf="project.id==0">
+      <option *ngFor="let user of userList$|async" [value]="user.id" selected>{{user.name}}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" [(ngModel)]="name" name="name">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea class="form-control" [(ngModel)]="description" name="description"></textarea>
+  </div>
+  <button (click)="addProject()" *ngIf="project.id==0" class="btn btn-primary">Add</button>
+  <button (click)="updateProject()" *ngIf="project.id!=0" class="btn btn-primary">Update</button>
+</form>
